@@ -4,9 +4,6 @@ from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from urllib import request
 
-#import asyncio
-#import async_timeout
-
 import requests
 import json
 import re
