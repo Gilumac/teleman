@@ -20,14 +20,8 @@ SCAN_INTERVAL = timedelta(minutes=30)
 
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
-#    vol.Required(CONF_TOKEN): cv.string,
-#    vol.Optional(CONF_PORT, default=DEFAULT_PORT): cv.string,
-#    vol.Optional(CONF_HOST, default=DEFAULT_HOST): cv.string,
-#    vol.Optional(CONF_PROTOCOL, default=DEFAULT_PROTO): cv.string,
-#    vol.Optional(CONF_MAXIMUM, default=DEFAULT_LIMIT): cv.string,
-#    vol.Optional(CONF_STATE, default=DEFAULT_STATE): cv.string,
+
      vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
-#    vol.Optional(CONF_SORTING, default=DEFAULT_SORTING): cv.string
 })
 
 
@@ -42,14 +36,7 @@ class telemansensor(Entity):
     def __init__(self, config):
         self._state = None
         self._name = config.get(CONF_NAME)
-        #self.token = config.get(CONF_TOKEN)
-        #self.host = config.get(CONF_HOST)
-        #self.protocol = config.get(CONF_PROTOCOL)
-        #self.port = config.get(CONF_PORT)
         self.data = None
-        #self.state_movies = config.get(CONF_STATE)
-        #self.limit = config.get(CONF_MAXIMUM)
-        #self.sort = config.get(CONF_SORTING)
 
     @property
     def name(self):
@@ -67,7 +54,6 @@ class telemansensor(Entity):
         return self.data
 
     def update(self):
-    #async def async_update(self):
 
         attributes = {}
         card_json = []
@@ -90,9 +76,6 @@ class telemansensor(Entity):
         for link in suggestions_div.find_all('a'):
             href_link = link.get('href')
             inner_url = href_link.replace("/", "https://m.teleman.pl/", 1)
-            #data_movie = link.find('div', class_="time").get_text().strip().split(":")
-            #propper_hour = int(data_movie[0])
-            #propper_minute = int(data_movie[1])
             
             channel = link.find('div', class_="station").get_text().strip()
             
@@ -111,7 +94,6 @@ class telemansensor(Entity):
             propper_minute = int(data_movie[2].split(":")[1])
             
             card_items = {}
-            #card_items['airdate'] = datetime.today().replace(microsecond=0).isoformat() +"Z"
             card_items['airdate'] = datetime.now().replace(day=propper_day, month=propper_month, hour=propper_hour, minute=propper_minute, microsecond=0).isoformat() +"Z"
             card_items['poster'] = image_propper
             card_items['title'] = titlemovie
@@ -119,7 +101,6 @@ class telemansensor(Entity):
             card_items['release'] = "$day $time"
             movie_tab.append(card_items)
             
-            #if self.sort == "date":
         movie_tab.sort(key=lambda x: x.get('airdate'))
 
         card_json = card_json + movie_tab
