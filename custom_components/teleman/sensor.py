@@ -90,7 +90,7 @@ class telemansensor(Entity):
             image_propper = image.replace("//", "https://", 1)
             for propper_div in soup_inner.find_all('div', class_="prog"):
                if time in propper_div.text:
-                    data_movie = propper_div.text.strip().replace("\n", " " ).split(" ", 3))
+                    data_movie = propper_div.text.strip().replace("\n", " " ).split(" ", 3)
                     break
             propper_day = int(data_movie[1].split(".")[0])
             propper_month = int(data_movie[1].split(".")[1])
