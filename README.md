@@ -10,3 +10,7 @@ Teleman to dodatek do Home Assistant, który pobiera ze strony teleman.pl inform
    Karta jest dostępna w HACS.
 2. Pobierz i zainstaluj ten dodatek. Możesz dodać w hacs custom repository z adresem:
    <code>https://github.com/Gilumac/teleman.git</code>
+###3. W pliku <code>configuration.yaml</code> dodaj:
+```yaml
+    sensor:
+    - platform: teleman
