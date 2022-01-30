@@ -1,6 +1,8 @@
 # Teleman
 Teleman to dodatek do Home Assistant, który pobiera ze strony teleman.pl informacje o polecanych do obejrzenia filmów w TV w danym dniu. Dane wyświetlane są w karcie upcoming media card, którą należy zainstalować osobno.
 
+<img src="image/screenshot.png">
+
 
 
 # Instalacja 
