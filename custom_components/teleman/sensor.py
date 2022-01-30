@@ -76,18 +76,22 @@ class telemansensor(Entity):
         for link in suggestions_div.find_all('a'):
             href_link = link.get('href')
             inner_url = href_link.replace("/", "https://m.teleman.pl/", 1)
-            
             channel = link.find('div', class_="station").get_text().strip()
-            
+            time = link.find('div', class_="time").get_text().strip()
+
             #zaglądam do linku
             page_inner = requests.get(inner_url)
             soup_inner = BeautifulSoup(page_inner.content, 'html.parser')
             titlemovie = soup_inner.find('h2').get_text().strip()
+            
             genre = soup_inner.find('div', class_="genre").get_text().strip()
             short_description = soup_inner.find('p', class_='show-desc').get_text().strip()
             image = soup_inner.find('img', itemprop="image").get('src')
             image_propper = image.replace("//", "https://", 1)
-            data_movie = soup_inner.find('div', class_="prog").get_text().strip().replace("\n", " " ).split(" ", 3)
+            for propper_div in soup_inner.find_all('div', class_="prog"):
+               if time in propper_div.text:
+                    data_movie = propper_div.text.strip().replace("\n", " " ).split(" ", 3))
+                    break
             propper_day = int(data_movie[1].split(".")[0])
             propper_month = int(data_movie[1].split(".")[1])
             propper_hour = int(data_movie[2].split(":")[0])
