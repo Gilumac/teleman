@@ -42,4 +42,4 @@ Przykład:
         clock: 24
 ```        
 # Wsparcie
- <a href="https://buycoffee.to/gilumac">Kup mi kawę/piwo</a>
+ <a href="https://buycoffee.to/gilumac">Kup mi kawę <img src="https://github.com/Gilumac/teleman/blob/main/image/3817208_coffee_cup_drink_icon.png"> lub piwo<img src="https://github.com/Gilumac/teleman/blob/main/image/2730343_beer_butterbeer_colour_frothy_harry_icon.png"></a>
