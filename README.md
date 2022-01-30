@@ -41,3 +41,5 @@ Przykład:
         image_style: fanart
         clock: 24
 ```        
+# Wsparcie
+ <a href="https://buycoffee.to/gilumac">Kup mi kawę/piwo</a>
