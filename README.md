@@ -23,9 +23,9 @@ cards:
       - type: custom:upcoming-media-card
         entity: sensor.teleman
         title: Tytuł karty
-        max: liczba wyświetlanych wpisów
-        image_style: tryb widoku karty, fanart lub poster
-        clock: 24(tryb zegara 12/24h)
+        max: 15   #liczba wyświetlanych wpisów
+        image_style: fanart   #tryb widoku karty, fanart lub poster
+        clock: 24   #tryb zegara 12/24h
 ```        
 Przykład:
 ```yaml
