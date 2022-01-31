@@ -95,10 +95,15 @@ class telemansensor(Entity):
             propper_day = int(data_movie[1].split(".")[0])
             propper_month = int(data_movie[1].split(".")[1])
             propper_hour = int(data_movie[2].split(":")[0])
+            if propper_hour == 0:
+                propper_hour = 23
+            else:
+                propper_hour -=1
+                
             propper_minute = int(data_movie[2].split(":")[1])
             
             card_items = {}
-            card_items['airdate'] = datetime.now().replace(day=propper_day, month=propper_month, hour=propper_hour -1, minute=propper_minute, microsecond=0).isoformat() +"Z"
+            card_items['airdate'] = datetime.now().replace(day=propper_day, month=propper_month, hour=propper_hour, minute=propper_minute, microsecond=0).isoformat() +"Z"
             card_items['poster'] = image_propper
             card_items['title'] = titlemovie
             card_items['studio'] = channel
