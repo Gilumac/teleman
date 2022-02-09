@@ -97,6 +97,7 @@ class telemansensor(Entity):
             propper_hour = int(data_movie[2].split(":")[0])
             if propper_hour == 0:
                 propper_hour = 23
+                propper_day -= 1
             else:
                 propper_hour -=1
                 
