@@ -85,7 +85,6 @@ class telemansensor(Entity):
             titlemovie = soup_inner.find('h2').get_text().strip()
             
             genre = soup_inner.find('div', class_="genre").get_text().strip()
-            short_description = soup_inner.find('p', class_='show-desc').get_text().strip()
             image = soup_inner.find('img', itemprop="image").get('src')
             image_propper = image.replace("//", "https://", 1)
             for propper_div in soup_inner.find_all('div', class_="prog"):
