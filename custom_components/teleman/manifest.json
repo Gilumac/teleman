@@ -1,7 +1,7 @@
 {
   "domain": "teleman",
   "name": "teleman",
-  "version": "0.1",
+  "version": "0.1.8",
   "documentation": "http://www.google.pl",
   "requirements": [],
   "dependencies": [],
